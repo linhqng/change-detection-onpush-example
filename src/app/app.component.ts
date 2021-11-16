@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { List } from "immutable";
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1>OnPush Change Detection</h1>
+    <p>We are going to lazy load some numbers with the OnPush change detection strategy</p>
+
+    <app-example [numbers]="numbers"></app-example>
+  `,
 })
 export class AppComponent {
-  title = 'change-detection-onpush-example';
+  numbers = List<number>();
 }
